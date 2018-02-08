@@ -3,12 +3,12 @@
 
 def numeroSig
 def nombre
+def librearyName
 
 def runPPCJenkinsfile() {
 
-    //def lib = library('projectX-shared-libs').com.evobanco
-    def libUtils = library('projectX-shared-libs').com.evobanco.ProjectUtils()
-    //def projectUtils = new com.evobanco.ProjectUtils()
+    def lib = library('projectX-shared-libs').com.evobanco
+    def projectUtils = new lib.ProjectUtils()
 
     node('maven') {
 
@@ -16,16 +16,15 @@ def runPPCJenkinsfile() {
             echo "Stage 1"
 
 
-            //numeroSig = lib.ProjectUtils.getNumber(3)
-            //nombre = lib.ProjectUtils.getName("Carlos")
+            numeroSig = lib.ProjectUtils.getNumber(3)
+            nombre = lib.ProjectUtils.getName("Carlos")
 
-            numeroSig = libUtils.getNumber(3)
-            nombre = libUtils.getName("Carlos")
 
-            libUtils
+            libraryName = projectUtils.getLibraryName()
 
             echo "numero siguiente al 3: ${numeroSig}"
             echo "Nombre (En MAYUSCULAS): ${nombre}"
+             echo "Library name: ${libraryName}"
         }
 
         stage('stage 2') {
