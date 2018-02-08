@@ -3,12 +3,10 @@
 
 def numeroSig
 def nombre
-def librearyName
 
 def runPPCJenkinsfile() {
 
     def lib = library('projectX-shared-libs').com.evobanco
-    def projectUtils = new lib.ProjectUtils()
 
     node('maven') {
 
@@ -24,7 +22,6 @@ def runPPCJenkinsfile() {
 
             echo "numero siguiente al 3: ${numeroSig}"
             echo "Nombre (En MAYUSCULAS): ${nombre}"
-             echo "Library name: ${libraryName}"
         }
 
         stage('stage 2') {
