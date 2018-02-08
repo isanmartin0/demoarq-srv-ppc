@@ -25,7 +25,7 @@ def runPPCJenkinsfile() {
         stage('stage 2') {
             echo "Stage 2"
 
-            setDisplayProjectName()
+            hello()
         }
     }
 }
