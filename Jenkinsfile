@@ -14,7 +14,7 @@ def runPPCJenkinsfile() {
         stage('stage 1') {
             echo "Stage 1"
 
-            nombre = library('projectX-shared-libs').com.evobanco.ProjectUtils.getName()
+            nombre = library('projectX-shared-libs').com.evobanco.ProjectUtils.getNumber(3)
             //nombre = projectUtils.getName();
 
             echo "Nombre: ${nombre}"
