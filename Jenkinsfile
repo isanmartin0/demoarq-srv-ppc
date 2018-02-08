@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
 
 
-
+def numeroSig
 def nombre
 
 def runPPCJenkinsfile() {
@@ -14,10 +14,10 @@ def runPPCJenkinsfile() {
         stage('stage 1') {
             echo "Stage 1"
 
-            nombre = library('projectX-shared-libs').com.evobanco.ProjectUtils.getNumber(3)
-            //nombre = projectUtils.getName();
+            numeroSig = library('projectX-shared-libs').com.evobanco.ProjectUtils.getNumber(3)
+            nombre = library('projectX-shared-libs').com.evobanco.ProjectUtils.getName("Carlos")
 
-            echo "Nombre: ${nombre}"
+            echo "Nombre (En MAYUSCULAS): ${nombre}"
         }
 
         stage('stage 2') {
