@@ -17,9 +17,6 @@ def runPPCJenkinsfile() {
             numeroSig = lib.ProjectUtils.getNumber(3)
             nombre = lib.ProjectUtils.getName("Carlos")
 
-
-            libraryName = projectUtils.getLibraryName()
-
             echo "numero siguiente al 3: ${numeroSig}"
             echo "Nombre (En MAYUSCULAS): ${nombre}"
         }
