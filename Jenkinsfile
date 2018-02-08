@@ -16,5 +16,3 @@ def runPPCJenkinsfile() {
         }
     }
 }
-
-return this;
