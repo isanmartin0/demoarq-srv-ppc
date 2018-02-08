@@ -6,7 +6,7 @@ def nombre
 
 def runPPCJenkinsfile() {
 
-    def lib = library('projectX-shared-libs').com.evobanco
+    //def lib = library('projectX-shared-libs').com.evobanco
     //def projectUtils = new com.evobanco.ProjectUtils()
 
     node('maven') {
@@ -14,8 +14,8 @@ def runPPCJenkinsfile() {
         stage('stage 1') {
             echo "Stage 1"
 
-            library('projectX-shared-libs').com.evobanco.ProjectUtils.getName()
-            nombre = projectUtils.getName();
+            nombre = library('projectX-shared-libs').com.evobanco.ProjectUtils.getName()
+            //nombre = projectUtils.getName();
 
             echo "Nombre: ${nombre}"
         }
