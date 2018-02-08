@@ -1,18 +1,22 @@
 #!/usr/bin/groovy
-@Library('projectX-shared-libs')_
+
 
 
 def nombre
 
 def runPPCJenkinsfile() {
 
-    def projectUtils = new com.evobanco.ProjectUtils()
+    def lib = library('projectX-shared-libs').com.evobanco
+    //def projectUtils = new com.evobanco.ProjectUtils()
 
     node('maven') {
 
         stage('stage 1') {
             echo "Stage 1"
+
+            library('projectX-shared-libs').com.evobanco.ProjectUtils.getName()
             nombre = projectUtils.getName();
+
             echo "Nombre: ${nombre}"
         }
 
